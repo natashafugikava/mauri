@@ -15,4 +15,4 @@ with col1:
   renda = st.slider('Renda mensal (R$)', 1000.00, 20000.00, 2000.00)
   
 with col2:
-  
+  st.write('Espaço reservado para o gráfico.')
