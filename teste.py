@@ -4,7 +4,7 @@ st.write('Demanda mensal de carne moída para uma família de 5 pessoas.')
 st.write('A família usa carne moída para fazer vários pratos, inclusive hambúrguer.')
 st.write('Dada uma situação, que inclui preços de vários produtos, renda, e preferências , a família decide quanto de carne moída precisa (ou pode) comprar.')
 
-col1, col2 = st.columns(2)
+col1, col2 = st.columns(2,1)
   
 with col1:
   carne = st.slider('Preço da carne moída (Kg)', 10.00, 50.00, 30.00)
