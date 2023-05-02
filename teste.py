@@ -5,5 +5,4 @@ st.write('A família usa carne moída para fazer vários pratos, inclusive hamb�
 st.write('Dada uma situação, que inclui preços de vários produtos, renda, e preferências , a família decide quanto de carne moída precisa (ou pode) comprar.')
 
 st.slider('Preço da carne moída (Kg)', 10.00, 50.00, 30.00)
-# age = st.slider('How old are you?', 0, 130, 25)
-# st.write("I'm ", age, 'years old')
+st.slider('Preço do pão de hambúrguer (unidade)', 5.00, 10,00, 7.50)
