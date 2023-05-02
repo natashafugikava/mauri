@@ -1,4 +1,5 @@
 import streamlit as st
+import matplotlib.pyplot as plt
 
 st.write('Demanda mensal de carne moída para uma família de 5 pessoas.')
 st.write('A família usa carne moída para fazer vários pratos, inclusive hambúrguer.')
@@ -12,3 +13,6 @@ with col1:
   ketchup = st.slider('Preço do ketchup (500g)', 5.00, 20.00, 10.00)
   queijo = st.slider('Preço da mussarela (Kg)', 20.00, 100.00, 45.00)
   renda = st.slider('Renda mensal (R$)', 1000.00, 20000.00, 2000.00)
+  
+with col2:
+  plt.scatter(2,3)
