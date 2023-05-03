@@ -1,5 +1,5 @@
 import streamlit as st
-# import matplotlib.pyplot as plt
+import pandas as pd
 
 st.write('Demanda mensal de carne moída para uma família de 5 pessoas.')
 st.write('A família usa carne moída para fazer vários pratos, inclusive hambúrguer.')
