@@ -30,4 +30,4 @@ consumo = teto/carne + teto/lanche
 with col2:
   st.write('Espaço reservado para o gráfico.')
   st.write(f'Gasto total com carne e sanduíches: R$ {2*teto:.2f}')
-  st.write(f'Consumo total de carne para outros fins: R$ {teto/carne:.2f}')
+  st.write(f'Consumo total de carne para outros fins: {teto/carne:.2f} Kg')
