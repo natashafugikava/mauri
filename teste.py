@@ -24,6 +24,10 @@ lanche = 0.2*carne + hamb/6 + ketchup/10 + 0.02*queijo
 
 # a família vai gastar até 3% de sua renda com carne moída para fins diversos
 # a família vai gastar até 3% de sua renda na confecção de sanduíches
+teto = renda*0.03
+consumo = teto/carne + teto/lanche
   
 with col2:
   st.write('Espaço reservado para o gráfico.')
+  st.write(f'Gasto total com carne e sanduíches: R$ {2*teto:.2f}')
+  st.write(f'Consumo total de carne para outros fins: R$ {teto/carne:.2f}')
