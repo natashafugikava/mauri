@@ -32,4 +32,5 @@ with col2:
   st.write(f'Gasto total com carne e sanduíches: R$ {2*teto:.2f}')
   st.write(f'Consumo total de carne para outros fins: {teto/carne:.2f} Kg')
   st.write(f'Consumo total de carne com sanduíches: {teto/lanche*0.2:.2f} Kg')
-  st.write(f'Consumo total de sauduíches mensais: {teto/lanche:.2f}')
+  st.write(f'Consumo total de sanduíches mensais: {teto/lanche:.2f} unidades')
+  st.write(f'Consumo total de sanduíches mensais por pessoa: {teto/lanche/5:.2f} unidades')
