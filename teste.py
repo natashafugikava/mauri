@@ -40,14 +40,10 @@ import pandas as pd
 import altair as alt
 import pandas as pd
 
-data = pd.DataFrame({'t': range(101)})
+x =[]
+y =[]
+for i in range(10, 50, 0.001):
+  x.append(i)
+  y.append(teto/i + teto/(0.2*i + hamb/6 + ketchup/10 + 0.02*queijo))
 
-st.write(alt.Chart(data).mark_line().encode(
-    x='x:Q',
-    y='y:Q',
-    order='t:Q'
-).transform_calculate(
-    x='carne',
-    #y='sin(datum.t * PI / 25)'
-    y='consumo'
-))
+data = pd.DataFrame({'t': range(101)})
