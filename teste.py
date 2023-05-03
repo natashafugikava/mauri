@@ -34,3 +34,20 @@ with col2:
   st.write(f'Consumo total de carne com sanduíches: {teto/lanche*0.2:.2f} Kg')
   st.write(f'Consumo total de sanduíches mensais: {teto/lanche:.2f} unidades')
   st.write(f'Consumo total de sanduíches mensais por pessoa: {teto/lanche/5:.2f} unidades')
+import altair as alt
+import pandas as pd
+
+import altair as alt
+import pandas as pd
+
+data = pd.DataFrame({'t': range(101)})
+
+st.write(alt.Chart(data).mark_line().encode(
+    x='x:Q',
+    y='y:Q',
+    order='t:Q'
+).transform_calculate(
+    x='carne',
+    #y='sin(datum.t * PI / 25)'
+    y='consumo'
+))
