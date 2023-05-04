@@ -49,4 +49,6 @@ for i in range(len(x)):
   y.append(teto/x[i] + teto/(0.2*x[i] + hamb/6 + ketchup/10 + 0.02*queijo))
 
 data = pd.DataFrame({'x': x, 'y':y})
-st.pyplot(plt.plot(x,y))
+fig, ax = plt.subplots()
+ax.scatter(x,y)
+st.pyplot(fig)
