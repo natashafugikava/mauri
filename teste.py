@@ -47,7 +47,10 @@ with tab1:
   plt.xlim([0,22])
   plt.ylim([0, 20])
   ax2.scatter(linhaH, yH, color='black', s=3)
-  ax2.scatter(xV2,linhaV, color='black', s=3)
+  try:
+    ax2.scatter(xV2,linhaV, color='black', s=3)
+  except:
+    pass
   ax2.scatter(xV, linhaV, color='black', s=3)
   ax2.scatter(x2,y2,color='red', s=5)
   ax2.scatter(x1,y1,s=5)
