@@ -29,12 +29,16 @@ with tab1:
   y2=[]
   for i in range(len(y1)):
     y2.append(y1[i]+demanda*10)
+  linhaH = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5]
+  linhaV = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5]
     
   fig2, ax2 = plt.subplots()
   plt.xlabel('Quantidade demandada')
   plt.ylabel('Preço (R$)')
   plt.xlim([0,22])
   plt.ylim([0, 20])
+  ax2.scatter(linhaH, 7.5, color='black', s=3)
+  ax2.scatter(5, linhaV, color='black', s=3)
   ax2.scatter(x2,y2,color='red', s=5)
   ax2.scatter(x1,y1,s=5)
   ax2.scatter(x2[y2.index(7.5)], 7.5, color='black', s=50)
