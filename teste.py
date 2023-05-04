@@ -13,7 +13,7 @@ with tab1:
   for i in range(200, 1800):
     x1.append(i/100)
   for j in range(len(x1)):
-     y1.append(-2*x1[j]+13)
+     y1.append(-(1/2)*x1[j]+10)
       
   fig, ax = plt.subplots()
   plt.xlabel('Quantidade demandada')
