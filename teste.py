@@ -45,6 +45,7 @@ x =[]
 y =[]
 for i in range(10000, 50000):
   x.append(i/1000)
+for i in range(len(c)):
   y.append(teto/x[i] + teto/(0.2*x[i] + hamb/6 + ketchup/10 + 0.02*queijo))
 
 data = pd.DataFrame({'x': x, 'y':y})
