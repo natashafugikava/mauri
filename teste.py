@@ -40,6 +40,14 @@ with tab1:
       xV2.append(x2[y2.index(7.5)])
     except:
       pass
+  try:
+    lx = []
+    ly = []
+    for i in range(5, round(x2[y2.index(7.5)])):
+      lx.append(i+0.5)
+      ly.append(7.5)
+   except:
+    pass
     
   fig2, ax2 = plt.subplots()
   plt.xlabel('Quantidade demandada')
@@ -49,6 +57,7 @@ with tab1:
   ax2.scatter(linhaH, yH, color='black', s=3)
   try:
     ax2.scatter(xV2,linhaV, color='black', s=3)
+    ax2.scatter(lx, ly, color='black', s=3)
   except:
     pass
   ax2.scatter(xV, linhaV, color='black', s=3)
