@@ -124,7 +124,7 @@ with tab3:
     x1.append(i/100)
   for j in range(len(x1)):
     y1.append(x1[j])  
-  for k in range(len(y1), -1, -1):
+  for k in range(len(y1)-1, -1, -1):
     y2.append(y1[k])
     
   fig, ax = plt.subplots()
