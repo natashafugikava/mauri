@@ -50,5 +50,6 @@ for i in range(len(x)):
 
 data = pd.DataFrame({'x': x, 'y':y})
 fig, ax = plt.subplots()
+plt.xlabel('Preço da carne moída (Kg))
 ax.scatter(x,y)
 st.pyplot(fig)
