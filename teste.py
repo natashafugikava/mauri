@@ -23,6 +23,9 @@ with tab1:
   
   st.subheader('Renda afetando a demanda')
   demanda = st.slider('Aumento da renda', 0.00, 1.00, 0.00)
+  x2=[]
+  for i in range(len(x1)):
+    x2.append(x1[i]+demanda)
   y2=[]
   for i in range(len(y1)):
     y2.append(y1[i]+demanda*10)
@@ -31,7 +34,7 @@ with tab1:
   plt.xlabel('Quantidade demandada')
   plt.ylabel('Preço (R$)')
   plt.ylim([0, 20])
-  ax2.scatter((x1+demanda),y2,color='red', s=10)
+  ax2.scatter(x2,y2,color='red', s=10)
   ax2.scatter(x1,y1,s=10)
   st.pyplot(fig2)    
     
