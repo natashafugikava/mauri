@@ -18,10 +18,21 @@ with tab1:
   fig, ax = plt.subplots()
   plt.xlabel('Quantidade demandada')
   plt.ylabel('Preço (R$)')
-#   plt.ylim([0, 120])
   ax.scatter(x1,y1,s=10)
-#   ax.scatter(carne, consumo, color='red', s=100)
   st.pyplot(fig)
+  
+  st.subheader('Renda afetando a demanda')
+  demanda = st.slider('Aumento da renda', 0,.00, 1.00, 0.00)
+  y2=[]
+  for i in range(len(y1)):
+    y2.append(y1[i]+demanda*10)
+    
+  fig2, ax2 = plt.subplots()
+  plt.xlabel('Quantidade demandada')
+  plt.ylabel('Preço (R$)')
+  ax2.scatter(x1,y1,s=10)
+  ax2.scatter(x1,y2,color='red')
+  st.pyplot(fig)    
     
 with tab2:
   st.subheader('teste')
