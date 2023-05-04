@@ -30,8 +30,8 @@ with tab1:
   fig2, ax2 = plt.subplots()
   plt.xlabel('Quantidade demandada')
   plt.ylabel('Preço (R$)')
+  ax2.scatter(x1,y2,color='red', s=10)
   ax2.scatter(x1,y1,s=10)
-  ax2.scatter(x1,y2,color='red')
   st.pyplot(fig2)    
     
 with tab2:
