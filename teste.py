@@ -134,6 +134,7 @@ with tab3:
   plt.ylim([0, 22])
   ax.scatter(x1,y2,s=5, c='red')
   ax.scatter(x1,y1,s=5)
+  ax.scatter(10,10,s=20,c='black')
   st.pyplot(fig)         
   
 #   st.header('Carne')
