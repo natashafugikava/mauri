@@ -46,7 +46,7 @@ with tab1:
     for i in range(5, round(x2[y2.index(7.5)])):
       lx.append(i+0.5)
       ly.append(7.5)
-   except:
+  except:
     pass
     
   fig2, ax2 = plt.subplots()
