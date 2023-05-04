@@ -22,7 +22,7 @@ with tab1:
   st.pyplot(fig)
   
   st.subheader('Renda afetando a demanda')
-  demanda = st.slider('Aumento da renda', 0.00, 1.00, 0.00, format=None)
+  demanda = st.slider('Aumento da renda', 0.00, 1.00, 0.00)
   
   x2=[]
   for i in range(len(x1)):
@@ -71,6 +71,16 @@ with tab1:
   st.pyplot(fig2)    
   
   st.subheader('Concorrente afetando a demanda') 
+  
+  frango = st.slider('Variação no preço do frango', -1.00, 1.00, 0.00)
+  porco = st.slider('Variação no preço do porco', -1.00, 1.00, 0.00)
+  
+  x3=[]
+  for i in range(len(x1)):
+    x3.append(x1[i]+2.5*frango+2.5*porco)
+  y3=[]
+  for i in range(len(y1)):
+    y3.append(y1[i]+5*frango+5*porco)
   
   fig3, ax3 = plt.subplots()
   plt.xlabel('Quantidade demandada')
