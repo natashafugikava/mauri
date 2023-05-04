@@ -31,7 +31,7 @@ with tab1:
   plt.xlabel('Quantidade demandada')
   plt.ylabel('Preço (R$)')
   plt.ylim([0, 20])
-  ax2.scatter(x1+demanda,y2,color='red', s=10)
+  ax2.scatter((x1+demanda),y2,color='red', s=10)
   ax2.scatter(x1,y1,s=10)
   st.pyplot(fig2)    
     
