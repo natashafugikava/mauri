@@ -35,8 +35,8 @@ with tab1:
   plt.ylabel('Preço (R$)')
   plt.xlim([0,22])
   plt.ylim([0, 20])
-  ax2.scatter(x2,y2,color='red', s=10)
-  ax2.scatter(x1,y1,s=10)
+  ax2.scatter(x2,y2,color='red', s=5)
+  ax2.scatter(x1,y1,s=5)
   ax2.scatter(5, 7.5, color='black', s=100)
   st.pyplot(fig2)    
     
