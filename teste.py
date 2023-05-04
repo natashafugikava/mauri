@@ -69,6 +69,16 @@ with tab1:
     pass
   ax2.scatter(5, 7.5, color='black', s=50)
   st.pyplot(fig2)    
+  
+  st.subheader('Concorrente afetando a demanda') 
+  
+  fig3, ax3 = plt.subplots()
+  plt.xlabel('Quantidade demandada')
+  plt.ylabel('Preço (R$)')
+  plt.xlim([0,22])
+  plt.ylim([0, 20]) 
+  ax3.scatter(x1,y1,s=5)
+  st.pyplot(fig3)  
     
 with tab2:
   st.subheader('teste')
