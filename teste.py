@@ -37,6 +37,7 @@ with tab1:
   plt.ylim([0, 20])
   ax2.scatter(x2,y2,color='red', s=10)
   ax2.scatter(x1,y1,s=10)
+  ax2.scatter(5, 2.5, color='black', s=15)
   st.pyplot(fig2)    
     
 with tab2:
