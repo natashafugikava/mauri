@@ -3,7 +3,7 @@ import pandas as pd
 import altair as alt
 import matplotlib.pyplot as plt
 
-tab1, tab2, tab3 = st.tabs(['Demanda', 'Oferta', 'Carne'])
+tab1, tab2, tab3 = st.tabs(['Demanda', 'Oferta', 'Equilíbrio'])
 
 with tab1:
   st.subheader('Efeito da variação no preço do próprio bem')
@@ -134,7 +134,7 @@ with tab3:
   plt.ylim([0, 22])
   ax.scatter(x1,y2,s=5, c='red')
   ax.scatter(x1,y1,s=5)
-  ax.scatter(10,10,s=20,c='black')
+  ax.scatter(10,10,s=50,c='black')
   st.pyplot(fig)         
   
 #   st.header('Carne')
