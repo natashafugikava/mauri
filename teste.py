@@ -86,8 +86,9 @@ with tab1:
   plt.xlabel('Quantidade demandada')
   plt.ylabel('Preço (R$)')
   plt.xlim([0,22])
-  plt.ylim([0, 20]) 
-  ax3.scatter(x3,y3,s=5)
+  plt.ylim([0, 20])
+  ax3.scatter(x1,x2,s=5)
+  ax3.scatter(x3,y3,s=5, c='red')
   st.pyplot(fig3)  
     
 with tab2:
