@@ -104,7 +104,7 @@ with tab2:
   y2=[]
   for i in range(len(x1)):
     x2.append(x1[i]-10*fert)
-    y2.append(y2[i]+10*fert)
+    y2.append(y1[i]+10*fert)
       
   fig, ax = plt.subplots()
   plt.xlabel('Quantidade ofertada de arriz')
