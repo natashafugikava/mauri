@@ -22,7 +22,7 @@ with tab1:
   st.pyplot(fig)
   
   st.subheader('Renda afetando a demanda')
-  demanda = st.slider('Aumento da renda', 0,.00, 1.00, 0.00)
+  demanda = st.slider('Aumento da renda', 0.00, 1.00, 0.00)
   y2=[]
   for i in range(len(y1)):
     y2.append(y1[i]+demanda*10)
