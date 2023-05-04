@@ -32,7 +32,7 @@ with tab1:
   plt.ylabel('Preço (R$)')
   ax2.scatter(x1,y1,s=10)
   ax2.scatter(x1,y2,color='red')
-  st.pyplot(fig)    
+  st.pyplot(fig2)    
     
 with tab2:
   st.subheader('teste')
