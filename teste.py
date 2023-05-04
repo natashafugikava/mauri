@@ -3,7 +3,7 @@ import pandas as pd
 import altair as alt
 import matplotlib.pyplot as plt
 
-tab1, tab2, tab3 = st.tabs(['Demanda', 'Teste', 'Carne'])
+tab1, tab2, tab3 = st.tabs(['Demanda', 'Oferta', 'Carne'])
 
 with tab1:
   st.subheader('Efeito da variação no preço do próprio bem')
@@ -83,7 +83,7 @@ with tab1:
     y3.append(y1[i]+5*frango+5*porco)
   
   fig3, ax3 = plt.subplots()
-  plt.xlabel('Quantidade demandada')
+  plt.xlabel('Quantidade demandada de carne bovina')
   plt.ylabel('Preço (R$)')
   plt.xlim([0,22])
   plt.ylim([0, 20])
@@ -107,7 +107,7 @@ with tab2:
     y2.append(y1[i]+10*fert)
       
   fig, ax = plt.subplots()
-  plt.xlabel('Quantidade ofertada de arriz')
+  plt.xlabel('Quantidade ofertada de arroz')
   plt.ylabel('Preço do arroz')
   plt.xlim([0,22])
   plt.ylim([0, 22])
@@ -116,52 +116,72 @@ with tab2:
   st.pyplot(fig)     
   
 with tab3:
-  st.header('Carne')
-  # situação exemplo de oferta e demanda de carne moída que depende de vários fatores
-  st.write('Demanda mensal de carne moída para uma família de 5 pessoas.')
-  st.write('A família usa carne moída para fazer vários pratos, inclusive hambúrguer.')
-  st.write('Dada uma situação, que inclui preços de vários produtos e sua renda, a família decide quanto de carne moída precisa (ou pode) comprar.')
+  st.subheader('Equilíbrio de mercado')
+  x1=[]
+  y1=[]
+  y2=[]
+  for i in range(200, 1800):
+    x1.append(i/100)
+  for j in range(len(x1)):
+    y1.append(x1[j])  
+  for k in range(len(y1), -1, -1):
+    y2.append(y1[k])
+    
+  fig, ax = plt.subplots()
+  plt.xlabel('Oferta e demanda')
+  plt.ylabel('Preço')
+  plt.xlim([0,22])
+  plt.ylim([0, 22])
+  ax.scatter(x1,y2,s=5, c='red')
+  ax.scatter(x1,y1,s=5)
+  st.pyplot(fig)         
+  
+#   st.header('Carne')
+#   # situação exemplo de oferta e demanda de carne moída que depende de vários fatores
+#   st.write('Demanda mensal de carne moída para uma família de 5 pessoas.')
+#   st.write('A família usa carne moída para fazer vários pratos, inclusive hambúrguer.')
+#   st.write('Dada uma situação, que inclui preços de vários produtos e sua renda, a família decide quanto de carne moída precisa (ou pode) comprar.')
 
-  col1, col2 = st.columns([1,3])
+#   col1, col2 = st.columns([1,3])
 
-  # barras que determinam o preço dos produtos e o salário da família
-  with col1:
-    # (nome do produto, preço mínimo, preço máximo, preço padrão)
-    carne = st.slider('Preço da carne moída (Kg)', 10.00, 50.00, 30.00)
-    hamb = st.slider('Preço do pão de hambúrguer (6 unidades)', 5.00, 20.00, 7.50)
-    ketchup = st.slider('Preço do ketchup (500g)', 5.00, 20.00, 10.00)
-    queijo = st.slider('Preço da mussarela (Kg)', 20.00, 100.00, 45.00)
-    renda = st.slider('Renda mensal (R$)', 1000.00, 20000.00, 2000.00)
+#   # barras que determinam o preço dos produtos e o salário da família
+#   with col1:
+#     # (nome do produto, preço mínimo, preço máximo, preço padrão)
+#     carne = st.slider('Preço da carne moída (Kg)', 10.00, 50.00, 30.00)
+#     hamb = st.slider('Preço do pão de hambúrguer (6 unidades)', 5.00, 20.00, 7.50)
+#     ketchup = st.slider('Preço do ketchup (500g)', 5.00, 20.00, 10.00)
+#     queijo = st.slider('Preço da mussarela (Kg)', 20.00, 100.00, 45.00)
+#     renda = st.slider('Renda mensal (R$)', 1000.00, 20000.00, 2000.00)
 
-  # preço médio da fabricação de um sanduíche que usa:
-  # 200g de carne, 1 pão, 50g de ketchup e 20g de queijo
-  lanche = 0.2*carne + hamb/6 + ketchup/10 + 0.02*queijo
+#   # preço médio da fabricação de um sanduíche que usa:
+#   # 200g de carne, 1 pão, 50g de ketchup e 20g de queijo
+#   lanche = 0.2*carne + hamb/6 + ketchup/10 + 0.02*queijo
 
-  # a família vai gastar até 3% de sua renda com carne moída para fins diversos
-  # a família vai gastar até 3% de sua renda na confecção de sanduíches
-  teto = renda*0.03
-  consumo = teto/carne + teto/lanche
+#   # a família vai gastar até 3% de sua renda com carne moída para fins diversos
+#   # a família vai gastar até 3% de sua renda na confecção de sanduíches
+#   teto = renda*0.03
+#   consumo = teto/carne + teto/lanche
 
-  with col2:
-    st.write('Espaço reservado para o gráfico.')
-    st.write(f'Gasto total com carne e sanduíches: R$ {2*teto:.2f}')
-    st.write(f'Consumo total de carne para outros fins: {teto/carne:.2f} Kg')
-    st.write(f'Consumo total de carne com sanduíches: {teto/lanche*0.2:.2f} Kg')
-    st.write(f'Consumo total de sanduíches mensais: {teto/lanche:.2f} unidades')
-    st.write(f'Consumo total de sanduíches mensais por pessoa: {teto/lanche/5:.2f} unidades')
+#   with col2:
+#     st.write('Espaço reservado para o gráfico.')
+#     st.write(f'Gasto total com carne e sanduíches: R$ {2*teto:.2f}')
+#     st.write(f'Consumo total de carne para outros fins: {teto/carne:.2f} Kg')
+#     st.write(f'Consumo total de carne com sanduíches: {teto/lanche*0.2:.2f} Kg')
+#     st.write(f'Consumo total de sanduíches mensais: {teto/lanche:.2f} unidades')
+#     st.write(f'Consumo total de sanduíches mensais por pessoa: {teto/lanche/5:.2f} unidades')
 
-    x =[]
-    y =[]
-    for i in range(10000, 50000):
-      x.append(i/1000)
-    for i in range(len(x)):
-      y.append(teto/x[i] + teto/(0.2*x[i] + hamb/6 + ketchup/10 + 0.02*queijo))
+#     x =[]
+#     y =[]
+#     for i in range(10000, 50000):
+#       x.append(i/1000)
+#     for i in range(len(x)):
+#       y.append(teto/x[i] + teto/(0.2*x[i] + hamb/6 + ketchup/10 + 0.02*queijo))
 
-    data = pd.DataFrame({'x': x, 'y':y})
-    fig, ax = plt.subplots()
-    plt.xlabel('Preço da carne moída (Kg)')
-    plt.ylabel('Consumo mensal de carne moída (Kg)')
-    plt.ylim([0, 120])
-    ax.scatter(x,y)
-    ax.scatter(carne, consumo, color='red', s=100)
-    st.pyplot(fig)
+#     data = pd.DataFrame({'x': x, 'y':y})
+#     fig, ax = plt.subplots()
+#     plt.xlabel('Preço da carne moída (Kg)')
+#     plt.ylabel('Consumo mensal de carne moída (Kg)')
+#     plt.ylim([0, 120])
+#     ax.scatter(x,y)
+#     ax.scatter(carne, consumo, color='red', s=100)
+#     st.pyplot(fig)
