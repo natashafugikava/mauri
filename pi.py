@@ -9,6 +9,6 @@ df = pd.read_parquet('fatec.parquet')
 df = df[['ad_id', 'id_type', 'latitude', 'longitude', 'datetime_local']]
 st.write(df)
 
-st.map(df)
+st.map(df, zoom=3)
 #gdf = gpd.GeoDataFrame(df, geometry = gpd.points_from_xy(df.longitude, df.latitude), crs = 4326)
 #st.write(gdf.plot(column='ad_id', markersize=5))
