@@ -22,7 +22,7 @@ with tab1:
   st.pyplot(fig)
   
   st.subheader('Renda afetando a demanda')
-  demanda = st.slider('Aumento da renda', 0.00, 1.00, 0.00)
+  demanda = st.slider('Aumento da renda', 0.00, 1.00, 0.00, format=None)
   
   x2=[]
   for i in range(len(x1)):
@@ -36,7 +36,10 @@ with tab1:
   xV = [5.0,5,5,5,5,5,5,5,5,5,5,5,5,5]
   xV2 = []
   for i in range(len(xV)):
-    xV2.append(x2[y2.index(7.5)])
+    try:
+      xV2.append(x2[y2.index(7.5)])
+    except:
+      pass
     
   fig2, ax2 = plt.subplots()
   plt.xlabel('Quantidade demandada')
