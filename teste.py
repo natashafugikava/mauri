@@ -50,6 +50,8 @@ with tab1:
   ax2.scatter(x1,y1,s=5)
   try:
     ax2.scatter(x2[y2.index(7.5)], 7.5, color='black', s=50)
+  except:
+    pass
   ax2.scatter(5, 7.5, color='black', s=50)
   st.pyplot(fig2)    
     
