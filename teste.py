@@ -92,8 +92,28 @@ with tab1:
   st.pyplot(fig3)  
     
 with tab2:
-  st.subheader('teste')
-  st.write('a')
+  st.subheader('Oferta')
+  fert = st.slider('Variação no preço do fertilizante', -1.00, 1.00, 0.00)
+  x1=[]
+  y1=[]
+  for i in range(200, 1800):
+    x1.append(i/100)
+  for j in range(len(x1)):
+     y1.append(x1[j])
+  x2=[]
+  y2=[]
+  for i in range(len(x1)):
+    x2.append(x1[i]-10*fert)
+    y2.append(y2[i]+10*fert)
+      
+  fig, ax = plt.subplots()
+  plt.xlabel('Quantidade ofertada de arriz')
+  plt.ylabel('Preço do arroz')
+  plt.xlim([0,22])
+  plt.ylim([0, 22])
+  ax.scatter(x2,y2,s=5, c='red')
+  ax.scatter(x1,y1,s=5)
+  st.pyplot(fig)     
   
 with tab3:
   st.header('Carne')
