@@ -6,11 +6,10 @@ import matplotlib.pyplot as plt
 tab1, tab2, tab3 = st.tabs(['Demanda', 'Teste', 'Carne'])
 
 with tab1:
-  st.header('Demanda')
   st.write('a')
   
 with tab2:
-  st.header('teste')
+  st.subheader('teste')
   st.write('a')
   
 with tab3:
