@@ -48,18 +48,18 @@ with tab3:
     st.write(f'Consumo total de sanduíches mensais: {teto/lanche:.2f} unidades')
     st.write(f'Consumo total de sanduíches mensais por pessoa: {teto/lanche/5:.2f} unidades')
 
-  x =[]
-  y =[]
-  for i in range(10000, 50000):
-    x.append(i/1000)
-  for i in range(len(x)):
-    y.append(teto/x[i] + teto/(0.2*x[i] + hamb/6 + ketchup/10 + 0.02*queijo))
+    x =[]
+    y =[]
+    for i in range(10000, 50000):
+      x.append(i/1000)
+    for i in range(len(x)):
+      y.append(teto/x[i] + teto/(0.2*x[i] + hamb/6 + ketchup/10 + 0.02*queijo))
 
-  data = pd.DataFrame({'x': x, 'y':y})
-  fig, ax = plt.subplots()
-  plt.xlabel('Preço da carne moída (Kg)')
-  plt.ylabel('Consumo mensal de carne moída (Kg)')
-  plt.ylim([0, 120])
-  ax.scatter(x,y)
-  ax.scatter(carne, consumo, color='red', s=100)
-  st.pyplot(fig)
+    data = pd.DataFrame({'x': x, 'y':y})
+    fig, ax = plt.subplots()
+    plt.xlabel('Preço da carne moída (Kg)')
+    plt.ylabel('Consumo mensal de carne moída (Kg)')
+    plt.ylim([0, 120])
+    ax.scatter(x,y)
+    ax.scatter(carne, consumo, color='red', s=100)
+    st.pyplot(fig)
