@@ -19,7 +19,7 @@ with tab1:
   plt.xlabel('Quantidade demandada')
   plt.ylabel('Preço (R$)')
 #   plt.ylim([0, 120])
-  ax.scatter(x1,y1,s=50)
+  ax.scatter(x1,y1,s=10)
 #   ax.scatter(carne, consumo, color='red', s=100)
   st.pyplot(fig)
     
