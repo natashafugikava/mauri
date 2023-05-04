@@ -33,6 +33,9 @@ with tab1:
   yH = [7.5,7.5,7.5,7.5,7.5,7.5,7.5,7.5,7.5]
   linhaV = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7]
   xV = [5.0,5,5,5,5,5,5,5,5,5,5,5,5,5]
+  xV2 = []
+  for i in range(len(xV)):
+    xV2.append(x2[y2.index(7.5)])
     
   fig2, ax2 = plt.subplots()
   plt.xlabel('Quantidade demandada')
@@ -40,6 +43,7 @@ with tab1:
   plt.xlim([0,22])
   plt.ylim([0, 20])
   ax2.scatter(linhaH, yH, color='black', s=3)
+  ax.scatter(xV2.,linhaV, color='black', s=3)
   ax2.scatter(xV, linhaV, color='black', s=3)
   ax2.scatter(x2,y2,color='red', s=5)
   ax2.scatter(x1,y1,s=5)
