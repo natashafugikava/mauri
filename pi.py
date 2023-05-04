@@ -5,3 +5,5 @@ import hvplot.pandas
 import streamlit as st
 
 st.header('Projeto Integrador I')
+df = pd.read_parquet('fatec.parquet')
+st.table(df)
