@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
+import matplotlib.pyplot as plt
 
 # situação exemplo de oferta e demanda de carne moída que depende de vários fatores
 st.write('Demanda mensal de carne moída para uma família de 5 pessoas.')
@@ -42,8 +43,9 @@ import pandas as pd
 
 x =[]
 y =[]
-for i in range(10, 50, 0.001):
-  x.append(i)
-  y.append(teto/i + teto/(0.2*i + hamb/6 + ketchup/10 + 0.02*queijo))
+for i in range(10000, 50000):
+  x.append(i/1000)
+  y.append(teto/x[i] + teto/(0.2*x[i] + hamb/6 + ketchup/10 + 0.02*queijo))
 
-data = pd.DataFrame({'t': range(101)})
+data = pd.DataFrame({'x': x, 'y':y})
+st.write(plt.plot(x,y))
