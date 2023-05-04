@@ -35,11 +35,6 @@ with col2:
   st.write(f'Consumo total de carne com sanduíches: {teto/lanche*0.2:.2f} Kg')
   st.write(f'Consumo total de sanduíches mensais: {teto/lanche:.2f} unidades')
   st.write(f'Consumo total de sanduíches mensais por pessoa: {teto/lanche/5:.2f} unidades')
-import altair as alt
-import pandas as pd
-
-import altair as alt
-import pandas as pd
 
 x =[]
 y =[]
@@ -54,4 +49,5 @@ plt.xlabel('Preço da carne moída (Kg)')
 plt.ylabel('Consumo mensal de carne moída (Kg)')
 plt.ylim([0, 120])
 ax.scatter(x,y)
+ax.scatter(carne, consumo, color='red')
 st.pyplot(fig)
