@@ -23,13 +23,14 @@ with tab1:
   
   st.subheader('Renda afetando a demanda')
   demanda = st.slider('Aumento da renda', 0.00, 1.00, 0.00)
-  st.write(x2[y2.index(7.5)])
+  
   x2=[]
   for i in range(len(x1)):
     x2.append(x1[i]+5*demanda)
   y2=[]
   for i in range(len(y1)):
     y2.append(y1[i]+demanda*10)
+  st.write(x2[y2.index(7.5)])  
   linhaH = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5]
   yH = [7.5,7.5,7.5,7.5,7.5,7.5,7.5,7.5,7.5]
   linhaV = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7]
