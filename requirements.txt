@@ -1,3 +1,6 @@
 pandas
 altair
 matplotlib
+pyarrow
+geopandas
+hvplot
