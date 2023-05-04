@@ -6,8 +6,23 @@ import matplotlib.pyplot as plt
 tab1, tab2, tab3 = st.tabs(['Demanda', 'Teste', 'Carne'])
 
 with tab1:
-  st.write('a')
+  st.subheader('Efeito da variação no preço do próprio bem')
   
+  x1=[]
+  y1=[]
+  for i in range(200, 1800):
+    x1.append(i/100)
+  for j in range(len(x1)):
+     y1.append(-2*x1[j]+13)
+      
+  fig, ax = plt.subplots()
+  plt.xlabel('Quantidade demandada')
+  plt.ylabel('Preço (R$)')
+#   plt.ylim([0, 120])
+  ax.scatter(x1,y1)
+#   ax.scatter(carne, consumo, color='red', s=100)
+  st.pyplot(fig)
+    
 with tab2:
   st.subheader('teste')
   st.write('a')
