@@ -2,11 +2,16 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 import matplotlib.pyplot as plt
+
 tab1, tab2, tab3 = st.tabs(['Demanda', 'Teste', 'Carne'])
+
 with tab1:
+  st.header('Demanda')
+  st.write('a')
   
 with tab2:
   st.header('teste')
+  st.write('a')
   
 with tab3:
   st.header('Carne')
